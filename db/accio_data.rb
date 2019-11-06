@@ -2,7 +2,8 @@ require_relative('../models/student')
 require_relative('../models/house')
 require('pry')
 
-
+Student.delete_all()
+House.delete_all()
 
 student1 = Student.new({
 'first_name' => "Neville",
