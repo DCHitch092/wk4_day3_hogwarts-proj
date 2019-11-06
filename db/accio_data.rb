@@ -1,4 +1,5 @@
 require_relative('../models/student')
+require_relative('../models/house')
 require('pry')
 
 
@@ -19,6 +20,24 @@ student2 = Student.new({
 
 student1.save
 student2.save
+
+house1 = House.new({
+  'house_name' => 'Gryffindor',
+  'logo_url' => 'gryffindor.png'
+  })
+
+house2 = House.new({
+  'house_name' => 'Slytherin',
+  'logo_url' => 'gryffindor.png'
+  })
+house3 = House.new({
+  'house_name' => 'Ravenclaw',
+  'logo_url' => 'gryffindor.png'
+  })
+house4 = House.new({
+  'house_name' => 'Hufflepuff',
+  'logo_url' => 'gryffindor.png'
+  })
 
 
 binding.pry

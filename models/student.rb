@@ -47,6 +47,10 @@ def self.all()
   return result
 end
 
+def self.delete_all()
+  sql = "DELETE FROM students"
+  SqlRunner.run(sql)
+end
 
 
 
