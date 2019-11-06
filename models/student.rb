@@ -9,7 +9,7 @@ class Student
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @second_name = options['second_name']
-    @house = options['house']
+    @house_id = options['house_id'].to_i
     @age = options['age'].to_i
   end
 
@@ -18,14 +18,24 @@ class Student
     (
       first_name,
       second_name,
-      house,
+      house_id,
       age)
       VALUES (
     $1, $2, $3, $4)
     RETURNING id"
-    values = [@first_name, @second_name, @house, @age]
+    values = [@first_name, @second_name, @house_id, @age]
     student = SqlRunner.run(sql, values)
     @id = student.first()['id'].to_i
+  end
+
+  def house()
+    sql = "SELECT houses.house_name FROM students
+    INNER JOIN houses
+    ON houses.id = students.house_id
+    WHERE students.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql,values)[0]['house_name']
+    return result
   end
 
   def self.find_by_id (id)
@@ -35,7 +45,6 @@ class Student
    result = Student.new(student.first)
   return result
   end
-
 
 
   def self.all()

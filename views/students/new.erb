@@ -6,10 +6,13 @@
 
   <label for="house">House:</label>
 <select id="house-id" name="house_id">
-  <option value="Gryffindor">Gryffindor</option>
+  <!-- <option value="Gryffindor">Gryffindor</option>
   <option value="Slytherin">Slytherin</option>
   <option value="HufflePuff">HufflePuff</option>
-  <option value="RavenClaw">RavenClaw</option>
+  <option value="RavenClaw">RavenClaw</option> -->
+  <% for house in @houses %>
+  <option value="<%= house.house_name %>"><%= house.house_name %></option>
+  <% end %>
 </select>
 
   <label for="age">Age:</label>

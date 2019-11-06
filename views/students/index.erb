@@ -1,6 +1,6 @@
 <ul>
 <% for student in @students %>
   <li><a href="students/<%= student.id %>"><h2><%= student.first_name %>
-<%= student.secound_name %></h2></a></li>
+<%= student.secound_name %></h2></a><p> <%= student.house() %></p></li>
 <% end %>
 </ul>

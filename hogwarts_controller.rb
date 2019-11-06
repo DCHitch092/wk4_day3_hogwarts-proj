@@ -21,6 +21,7 @@ get '/hogwarts/houses' do
 end
 
 get '/hogwarts/students/new' do #student-new
+  @houses = House.all()
   erb(:'students/new')
 end
 get '/hogwarts/houses/new' do #house-new
