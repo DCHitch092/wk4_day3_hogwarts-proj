@@ -40,6 +40,10 @@ house4 = House.new({
   'logo_url' => 'gryffindor.png'
   })
 
+house1.save()
+house2.save()
+house3.save()
+house4.save()
 
 binding.pry
 

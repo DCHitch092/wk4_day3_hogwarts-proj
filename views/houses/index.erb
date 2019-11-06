@@ -1,0 +1,6 @@
+<ul>
+<% for house in @houses %>
+  <li><a href="houses/<%= house.id %>"><h2><%= house.house_name %></h2></a></li>
+  <li><a href="houses/<%= house.id %>"><%= house.logo_url %></a></li>
+<% end %>
+</ul>
